@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.74.0'
+project:
+    name: Simple-Demo
+    package:
+        name: Simple-Demo
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Simple-Demo/tests
+            options:
+                outputdir: robot/Simple-Demo/results
+
+    robot_testdoc:
+        options:
+            path: robot/Simple-Demo/tests
+            output: robot/Simple-Demo/doc/Simple-Demo_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
